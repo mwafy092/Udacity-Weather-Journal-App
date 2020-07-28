@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap');
 
 /* reset elements */
 * {
@@ -100,17 +100,17 @@ button {
     margin: 2rem;
 }
 
-.entry-title {
-    font-size: 2rem;
-    font-weight: 600;
-    color: #19555C;
-}
 
 .entry-container {
     display: flex;
-    flex-direction: column;
-    color: #FCB960;
+    justify-content: space-evenly;
+    color: #19555C;
     font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.entry-container span {
+    font-weight: 500;
 }
 
 .entry-container div {

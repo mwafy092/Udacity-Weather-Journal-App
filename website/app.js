@@ -8,9 +8,11 @@ document.getElementById('generate').addEventListener('click', () => {
     const zip = document.getElementById('zip').value;
     const feeling = document.getElementById('feelings').value;
     const date = new Date();
+    newDate = `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
     getWeather(baseURL, zip, api)
         .then(data => {
-            postData('/postData', { date: date, temp: data.main.temp, content: feeling });
+            let temp = Math.round(data.main.temp * 9 / 5 - 459.67);
+            postData('/postData', { date: newDate, temp: temp, content: feeling });
         })
         .then(data => {
             updateUI();
@@ -37,9 +39,9 @@ const updateUI = async () => {
         const allData = await request.json()
         console.log(allData)
         // update new entry values
-        document.getElementById('date').innerHTML = 'Date: ' + allData.date;
-        document.getElementById('temp').innerHTML = 'Temperature: ' + allData.temp;
-        document.getElementById('content').innerHTML = 'User Entry: ' + allData.content;
+        document.getElementById('date').innerHTML = '<span>Date</span><br>' + allData.date;
+        document.getElementById('temp').innerHTML = '<span>Temperature</span><br>' + allData.temp + ' F';
+        document.getElementById('content').innerHTML = '<span>User Entry</span><br>' + allData.content;
     }
     catch (error) {
         console.log("error", error);
