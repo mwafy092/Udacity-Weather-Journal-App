@@ -20,27 +20,27 @@ body {
 /* container */
 .container {
     display: grid;
-    grid-auto-rows: minmax(300px, auto);
+    grid-auto-rows: minmax(100px, auto);
     grid-template-areas:
     'header'
     'main'
     'footer'
     ;
-    padding: 1rem;
 }
 
 /* header */
 header {
     grid-area: header;
-    padding: 2rem;
+    padding: 6rem;
     text-align: center;
-    background-color: #F6FAFF;
+    background-color: #1A5960;
     display: flex;
     justify-content: center;
     align-items: center ;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
 .logo {
-    color: #19555C;
+    color: #fff;
     font-weight: 900;
     font-size: 3rem;
 }
@@ -89,5 +89,104 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 1rem;
+    text-align: center;
 }
 
+.entry {
+    grid-area: entry;
+    text-align: center;
+    padding: 4rem;
+    margin: 2rem;
+}
+
+.entry-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #19555C;
+}
+
+/* footer */
+footer {
+    grid-area: footer;
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.footer-text {
+    color: #19555C;
+}
+
+.footer-email {
+    color: #19555C;
+}
+
+.footer-email a {
+    text-decoration: none;
+    color: #FCB960;
+}
+
+/* photos */
+.top-photo {
+    position: absolute;
+    top: 5rem;
+    left: 0;
+}
+
+.top-photo i {
+    font-size: 10rem;
+    color: #fff;
+}
+
+.right-photo {
+    position: absolute;
+    right: 2rem;
+    bottom: 10rem;
+}
+
+.right-photo i {
+    color: rgba(0, 0, 0, 0.1);
+    font-size: 30rem;
+}
+
+.left-photo {
+    position: absolute;
+    left: 2rem;
+    bottom: 10rem;
+}
+
+.left-photo i {
+    color: rgba(0, 0, 0, 0.1);
+    font-size: 30rem;
+}
+
+.right-animation {
+    animation: fader1 3s ease-in-out;
+}
+.left-animation {
+    animation: fader2 2s ease-in-out;
+}
+
+@keyframes fader1 {
+    0% {
+        opacity: 0;
+        transform: translateZ(10rem);
+    }
+    100% {
+        opacity: 100;
+        transform: translateZ(0);
+    }
+}
+
+@keyframes fader2 {
+    0% {
+        opacity: 0;
+        transform: translateX(-10rem);
+    }
+    100% {
+        opacity: 100;
+        transform: translateX(0);
+    }
+}
